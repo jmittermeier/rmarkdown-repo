@@ -90,10 +90,34 @@ b <- ggplot(g, aes(x = continent, y = lifeExp)) + geom_boxplot() +
   theme(legend.position = 'none')
 b
 
+```  
 
+## GoogleVis interactive figure
+
+``` {r, results='asis'}
+
+# don't forget the 'asis' bit at the start of your r code in this case
+
+suppressPackageStartupMessages(library(googleVis)) #install.packages('googleVis')
+#use the suppress packages to remove the initial start up message
+
+#code copied from course pages
+op <- options(gvis.plot.tag='chart')
+
+m = gvisMotionChart(
+  gapminder %>%
+    mutate(
+      pop_m = pop / 1e6,
+      log_gdpPercap = log(gdpPercap)), 
+  idvar='country', 
+  timevar='year', 
+  xvar='log_gdpPercap', 
+  yvar='lifeExp', 
+  colorvar='continent',
+  sizevar='pop_m')
+plot(m)
 
 ```  
-  
   
   
   
