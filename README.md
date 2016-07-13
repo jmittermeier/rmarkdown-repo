@@ -16,7 +16,12 @@ This repository demonstrates **software** and _formats_:
 1. _Markdown_
 1. _Rmarkdown_
 
+non-numbered lists
+  - bullets are an option
+
 ## Conclusion
+
+Pay attention to this syntax to add an image, but remember that this image is just a link so if the link dies if will go
 
 ![](https://octodex.github.com/images/labtocat.png)
 
