@@ -28,3 +28,76 @@ Here we write in Markdown.
 library(dplyr)
 library(gapminder)
 library(ggplot2) # install.packages('ggplot2')
+
+## subset the data
+g <- gapminder %>%
+  filter(year == 2007) %>%
+  mutate(pop_m = pop/1e6)
+```
+
+# My first plot
+
+a simple geom_point
+
+``` {r}
+
+## ggplot(data, aes(what's x, what's y)) + what_kind_of_plot()
+s <- ggplot(g, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
+s
+
+```
+  
+# My second plot
+
+a simple geom_point
+
+``` {r}
+
+## ggplot(data, aes(what's x, what's y)) + what_kind_of_plot()
+s2 = s + aes(size = pop_m)
+s2
+
+s3 = s2 + aes(color = continent)
+s3
+
+``` 
+
+# A new chunk with everything added together
+This makes things more streamlined
+``` {r}
+
+## ggplot(data, aes(what's x, what's y)) + what_kind_of_plot()
+s <- ggplot(g, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point() + aes(size = pop_m) + aes(color = continent) +
+  ggtitle('Health and Wealth of Nations for 2007') +
+  xlab('GDP per capita (USD/year)') +
+  ylab('Life Expectancy (years)') +
+  scale_colour_discrete('Continent') +
+  scale_size_continuous('pop_m')
+s
+
+``` 
+
+## Make a box plot
+
+This is my boxplot of continent and life expectancy.  This is done using 'g', which is a subset of 2007
+``` {r}
+
+## ggplot(data, aes(what's x, what's y)) + what_kind_of_plot()
+b <- ggplot(g, aes(x = continent, y = lifeExp)) + geom_boxplot() +
+  aes(fill = continent) +
+  theme(legend.position = 'none')
+b
+
+
+
+```  
+  
+  
+  
+  
+  
+  
+  
+  
