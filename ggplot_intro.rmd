@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
+# we need to update graphs
 ## Plan
 
 We'll load libraries and learn ggplot2.
