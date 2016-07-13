@@ -3,6 +3,8 @@ Repository made for rmarkdown during software carpentry course 13 July
 
 Hello, testing this file!
 
+By the way, here is [my ggplot intro](https://jmittermeier.github.io/rmarkdown-repo/ggplot_intro.html)
+
 # my-project
 
 Playing with [Software Carpentry at Oxford](http://jule32.github.io/2016-07-12-Oxford).
