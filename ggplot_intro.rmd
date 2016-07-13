@@ -3,6 +3,8 @@ title: "ggplot intro"
 author: "jmittermeier"
 date: "July 13, 2016"
 output: html_document
+
+# Try editing
 ---
 
 ```{r setup, include=FALSE}
